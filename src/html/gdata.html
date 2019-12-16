@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var data = [{
+            leftContent: {
+                leftTitle: "",
+                leftTarget: [1, 2, 3],
+            },
+            rightContent: {
+                minTitle: "",
+                minList: [xxx],
+                offer: [xxx]
+            }
+        }, {
+            leftContent: {
+                leftTitle: "",
+                leftTarget: [1, 2, 3],
+            },
+            rightContent: {
+                minTitle: "",
+                minList: [xxx],
+                offer: [xxx]
+            }
+        }]
+
+        var data = [];
+        var lis = document.querySelectorAll(".float-list dt");
+        var contents = document.querySelectorAll(".secondlist");
+
+        for(var i = 0; i<lis.length;i++){
+            var  obj = {};
+            obj.leftContent = {};
+            obj.leftContent.leftTitle = lis[i].firstElementChild.innerText;
+
+            obj.leftContent.leftTarget = [];
+            var leftTarget = lis[i].firstElementChild.nextElementSibling.querySelectorAll("a");
+
+             for(var j = 0; j < leftTarget.length;j++) {
+                obj.leftContent.leftTarget.push(leftTarget[j].innerText);
+             }
+            
+            data.push(obj);
+
+        }
+        console.log(data);
+        
+        
+    </script>
+</body>
+
+</html>
